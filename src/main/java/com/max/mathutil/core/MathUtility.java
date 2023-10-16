@@ -34,6 +34,20 @@ public class MathUtility {
         }
         return result;
     }
+    //Kĩ thuật kiểm thử hồi quy - PEGRESSION TEST
+    //Test lại những thứ đã từng test sẽ xác nhận nó còn có ổn không
+    //Tại sao phải test lại???
+    //1. Anh em fix bug, sẽ sửa code
+    //2. Anh em tối ưu, chỉnh sửa code để code đẹp hơn, chạy tốt hơn, nhanh hơn
+    //3. Anh em thêm hàm mới, METHOD mới
+    
+    //Khi sửa code, phải TEST lại để đảm bảo nó vẫn ngon, vẫn xanh
+    //Nếu TEST = tay cực kì mất sức, coi chừng sai sót
+    //Nếu có TEST SCRIPT, ta chỉ việc RUN, và nhìn màu đưa ra
+    //Nếu màu xanh, code chỉnh sửa ổn, vì thỏa EXPECTED == ACTUAL
+    //Nếu màn đỏ, code ko ổn, sửa tiếp cho đến khi nào ổn
+    //Ta test lại mà chỉ cần nhìn màu -> nhanh, ko hao sức, chính xác
+    // Miễn đủ test case, test script
     
 }
 
