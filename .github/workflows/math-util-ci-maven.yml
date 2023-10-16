@@ -1,0 +1,24 @@
+name: Math Utility Repo applying CI  # name: tương đương console.log() để ghi lại nhật kí chạy các lệnh
+
+on:
+  push:
+    branches: [ "main" ]  # bất kì ai push code lên nhánh main, kho code chính:
+  pull_request:
+    branches: [ "main" ]
+
+jobs:                      # thì tự động thực thi các lệnh dưới đây
+  build:                   # build app -> .jar .war bằng cách
+
+    runs-on: ubuntu-latest    #1 Mượn 1 server bên Mỹ, cài sẵn dùm OS Ubuntu
+
+    steps:
+    - uses: actions/checkout@v3    #2 Có server rồi, download code từ GitHub về server này
+    - name: Set up JDK 19 - Mượn JDK 19         #3 Cho mượn cái JDK
+      uses: actions/setup-java@v3  
+      with:
+        java-version: '19'          #4 Khai báo version JDK ứng với file pom.xml
+        distribution: 'temurin'
+        cache: maven
+    - name: Build with Maven - Tạo file .jar .war       #5 Mượn Maven, chạy lệnh để biên dịch, đóng gói, test luôn
+      run: mvn -B package --file pom.xml
+
